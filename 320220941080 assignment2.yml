@@ -1,0 +1,19 @@
+student_id: 320220941080  
+assignment_id: assignment_2  
+answers:  
+  - question: 1  
+    answer: "Exploratory visualization is made to discover new insights from the data, which is less refined and aimed at gaining more insights quickly. While explanatory visualization is made to communicate insights from the data, which need to be refined, and only a few insights should be communicated."  
+  - question: 2  
+    answer: "The first one is the data source, because understanding where the data comes from and how it was collected can help assess its reliability and validity. Then we also need to clarify the purpose of the visualization. Next, we should identify the background and needs of the target audience to ensure the visualization effectively communicates its message. Additionally, we should organize the content and structure logically. Finally, we should pay attention to some design elements like color, graphics, and labels."  
+  - question: 3  
+    answer: "https://i0.wp.com/www.codeconquest.com/wp-content/uploads/image-9.png?w=640&ssl=1"  
+  - question: 4  
+    answer: "This pie chart is the visualization of the statistics of Americans who have tried marijuana in 2023, 2022, and 1997."  
+  - question: 5  
+    answer: "The bad point of this chart is that people could perceive it in a worrying way easily. The pie chart shows the percentage of Americans who have tried marijuana in 2023, 2022, and 1997. However, the audience may suppose that there are 51% Americans who tried marijuana this year, 43% tried it last year, and 34% tried it in 1997."  
+  - question: 6  
+    answer: "To improve it, I suggest that they clarify the title, showing that it is the percentage of Americans who tried marijuana in 2023, 2022, and 1997. Also, it would be better if they convert the pie chart to a bar chart."  
+  - question: 7  
+    answer: "My favorite message in the video is that America has the biggest military budget, which exceeds that of the four other top industrialized nations. The reason why I love it is that the speaker presented this message visually, and I understood it quickly and completely."  
+  - question: 8  
+    answer: "Roses, line chart, pie chart, visual CV, geomorphological map, pyramid chart"

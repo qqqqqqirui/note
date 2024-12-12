@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>group_26.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<hr>
+<h1 id="info-250-information-visualization-fall-2024">INFO 250: Information Visualization (Fall, 2024)</h1>
+<h1 id="project2">Project2</h1>
+<h3 id="project-title-chart-visualization-analysis">Project Title: Chart visualization analysis</h3>
+<h3 id="team-id26-class-2">Team ID:26 (Class 2)</h3>
+<h3 id="studentssihan-li-qirui-zhang-chenbang-youboyuan-chen">Student(s):Sihan Li, Qirui Zhang, Chenbang You,Boyuan Chen</h3>
+<h3 id="schoollanzhou-university">School:Lanzhou University</h3>
+<h3 id="date20241213">Date:2024/12/13</h3>
+<hr>
+<h1 id="introduction">Introduction</h1>
+<p>In today's society, with the increasing economic downturn, the incidence of global anxiety and depression is rising year by year, making the treatment of depression an increasingly important public health issue. The pathogenesis of depression is complex, involving multiple biological, psychological, and socio-environmental factors. Consequently, there are various medical treatment options for depression, including pharmacological and psychological therapies.</p>
+<p>In the pharmacological treatment of depression, recent research has begun to focus on the molecular mechanisms of depression and explore new therapeutic targets. The interaction of death-associated protein kinase 1 (DAPK1) with the C-terminus of the 2B subunit (GluN2B) of the N-methyl-D-aspartate receptor (NMDAR) plays a critical role in the pathophysiology of depression and is considered a potential target for the structure-based discovery of new antidepressants. We have noted that researchers from Zhejiang University and Chongqing University published a study in 2018 on the interaction between DAPK1 and GluN2B, titled &quot;Prediction of GluN2B-CT1290-1310/DAPK1 Interaction by Protein–Peptide Docking and Molecular Dynamics Simulation&quot; [1].</p>
+<p>This paper primarily used computational methods such as protein-peptide docking and molecular dynamics (MD) simulation to predict the mechanism of interaction between DAPK1 and the C-terminal residues 1290-1310 of GluN2B. Additionally, through per-residue free energy decomposition and in silico alanine scanning analysis, the study identified hot spots within the DAPK1 and GluN2B-CT1290-1310 complex. The research revealed the mechanism of interaction between GluN2B-CT1290-1310 and DAPK1 and provided insights for the discovery of drugs with this novel binding mechanism based on structural information.</p>
+<p>Furthermore, upon carefully reviewing this paper, we identified areas where improvements could be made in the visualization of the experimental results and have proposed our suggestions for enhancement.</p>
+<div style="page-break-after: always;"></div>
+<hr>
+<h1 id="background-of-selected-visualization">Background of Selected Visualization</h1>
+<p>When reviewing the aforementioned paper, we observed that the researchers initially conducted per-residue binding free energy decomposition calculations for the simulated DAPK1 and Glu2B-CT1290-1310 complex, obtaining separate energy contribution estimates for 21 major residues of the simulated DAPK1-Glu2B complex. Based on the results of the per-residue binding energy decomposition of the simulated complex, the researchers identified the nine hotspot residues with the greatest contributions. Subsequently, the researchers performed alanine scanning on the selected nine hotspot residues to obtain their binding free energies. Finally, the researchers draws bar charts for both the per-residue binding energy decomposition results of the simulated complex and the binding free energies of the hotspot residues obtained from alanine scanning, placing one above the other for comparative verification.</p>
+<p>As shown in the figure below, the chart is divided into two parts: the upper and lower halves.
+The upper half of the chart's orange bar graph displays the 21 major residues of the simulated DAPK1-Glu2B complex, with estimated energy contributions calculated using the per-residue binding energy decomposition method. Each residue's calculated absolute binding free energy value (absolute value) exceeded 0.60 kcal/mol, which are: Gly20, Val27, Glu100, Lys141, Glu143, Met146, Ile160, Asp161, Arg302, Gln1291, Asn1294, Leu1298, Arg1300, His1302, Ser1303, Tyr1304, Asp1305. Among them, Glu100, Gln1291, and Arg1300 had the most significant contributions, with values of -5.85 kcal/mol, -6.36 kcal/mol, and -5.92 kcal/mol, respectively. The combined energy contribution of these residues accounts for 78% of the total binding free energy, leading the article to conclude that these residues are key parts of the DAPK1-Glu2B complex.</p>
+<p>The lower half of the chart's black bar graph illustrates the binding free energies of the hotspot residues determined by alanine scanning of the DAPK1-Glu2B complex interface, with each residue's absolute binding free energy value (absolute value) exceeding 2 kcal/mol. There are a total of 9 residues, which are: Gly20, Val27, Glu143, Met146, Ile160, Asp161, Gln1291, Arg1300. These residues have significantly lower binding free energies (larger negative values), indicating a stronger affinity for ligand binding and a significant role in enhancing the stability of the DAPK1-Glu2B complex. Additionally, by analyzing the results of the alanine scanning, it can be determined that Glu100 has the greatest impact on binding free energy and is a relatively key residue in the DAPK1-Glu2B complex.</p>
+<p>Overall, the chart displays the calculated energy contributions of each residue in the simulated complex and the actual binding free energies of the top nine contributing residues, essentially showcasing the effectiveness of the simulated complex in experimental validation.</p>
+<p>Explanation of some experimental terms:</p>
+<ul>
+<li>
+<p>Residue: In the structure of proteins and peptides, a residue typically refers to the structural unit of an amino acid molecule. In a polypeptide chain, the carboxyl and amino groups of amino acids connect sequentially to form peptide bonds. After losing a molecule of water, a specific amino acid in the polypeptide is called a &quot;residue.&quot; For example, a part of glutamic acid (Glu) in a polypeptide chain is referred to as a &quot;glutamic acid residue,&quot; generally denoted by its one-letter code (E) or three-letter code (Glu).</p>
+</li>
+<li>
+<p>DAPK1, Glu2B, GluN2B-CT1290-1310: DAPK1 refers to Death-Associated Protein Kinase 1, GluN2B is the Glutamate Receptor, Ionotropic, N-Methyl-D-Aspartate 2B subunit, and GluN2B-CT1290-1310 denotes the C-terminal sequence of amino acids 1290 to 1310 of the GluN2B subunit, which together play a significant role in the pathophysiology of depression and are targets for the development of new antidepressant drugs.</p>
+</li>
+<li>
+<p>Simulated complex: The original paper used a combined strategy of protein-peptide docking and molecular dynamics (MD) simulation to simulate the interaction of DAPK1 with GluN2B-CT1290-1310. The complex was assessed using methods such as MD simulation, binding free energy calculation, and molecular mechanics Poisson-Boltzmann surface area (MM/GBSA).</p>
+</li>
+<li>
+<p>Alanine scanning: Alanine scanning is a commonly used experimental technique for identifying important amino acid residues in proteins. By replacing an amino acid at a specific position with alanine, researchers can assess the importance of that amino acid in maintaining the protein's structure and function. The replaced residue is usually denoted by a one-letter code-number-alanine code (A).</p>
+</li>
+<li>
+<p>Binding free energy:
+Binding free energy refers to the change in free energy involved when a ligand binds to its target protein. Generally, a negative binding free energy value indicates a stronger affinity between the ligand and the protein, and higher stability. The analysis of binding free energy is often used to quantify the interaction strength between two molecules and to predict the activity of the complex in the body.</p>
+</li>
+<li>
+<p>Hotspot residues:
+Hotspot residues are amino acid residues that significantly affect the binding energy or function in proteins or protein complexes.</p>
+</li>
+<li>
+<p>Residue naming method: In this paper, there are three main methods of residue naming. The first is the three-letter (identifying a specific amino acid)-position number format, the second is directly using the position number to represent the residue, and the third is the one-letter (identifying an amino acid)-position number-alanine number (A) format, indicating that in the alanine scanning experiment, the amino acid identified by a single letter was replaced with alanine (A).</p>
+</li>
+<li>
+<p>Per-residue binding energy decomposition: Per-residue binding energy decomposition is a computational method used to determine the contribution of individual amino acid residues to the overall binding affinity of a complex. It typically includes the following steps:</p>
+</li>
+<li>
+<p>Molecular dynamics; energy calculation: Using methods such as molecular mechanics/Poisson-Boltzmann surface area (MM/PBSA) or molecular mechanics/Generalized Born surface area (MM/GBSA) to calculate binding free energy and estimate the contributions of individual residues.That is, using the aforementioned methods, the total binding energy is decomposed into the contributions of each residue, highlighting the positive and negative roles.</p>
+</li>
+</ul>
+<p><a href="https://postimg.cc/5YKV6DTW"><img src="https://i.postimg.cc/Kjxvs25j/2024-12-11-19-42-16.png" alt="2024-12-11-19-42-16.png"></a></p>
+<hr>
+<h1 id="issues-with-the-original-chart">Issues with the Original Chart</h1>
+<p>The bar charts of residue binding energy contributions and relative binding free energies in the paper present the results of the analysis and decomposition of the simulated DAPK1-Glu2B complex, but they are rather confusing and require the following improvements:</p>
+<ul>
+<li>
+<p>High information density: The original chart has a high information density, which can easily confuse readers (or other researchers). We hope that the improved chart will make the data easier to interpret.</p>
+</li>
+<li>
+<p>Misaligned label positions: In the original chart, some x-axis labels (residues) in the upper and lower parts represent the energy contributions of the same residue and the relative binding free energy obtained from alanine scanning as a hotspot residue, but it is actually difficult for readers to identify the corresponding bars for the same residue above and below, affecting the readability of the experimental results.</p>
+</li>
+<li>
+<p>Inconsistent residue naming: The upper labels represent residues by their position in the protein amino acid sequence, while the lower representation uses a one-letter-code-position number-alanine number (A) format to identify the relative free binding energy of different residues. Residues labeled in two different ways can easily mislead readers into thinking they are two different residues.</p>
+</li>
+<li>
+<p>Inconsistent subplot directions: The energy contribution values and relative binding free energy values represented in the upper and lower parts of the original chart are both negative, but the original chart uses different directions to represent the two types of energy values, which can easily mislead readers into thinking the energy values are one positive and one negative.</p>
+</li>
+<li>
+<p>Unclear comparison of calculation and scanning results: In the original chart, after calculating the binding energy contributions of 21 residues in the simulated Glu100-CT1290-1310/DAPK1 complex, the researchers selected the 9 residues with the greatest contributions and verified them through alanine scanning, but the original chart does not highlight the comparison results of the calculation and scanning results.</p>
+</li>
+<li>
+<p>Label sorting does not highlight key information: The residue labels in the original chart are sorted by the position number of the amino acids, but the original chart focuses on selecting hotspot residues and displaying the relative free binding energy obtained from the scanning of the selected hotspot residues, but the original chart's sorting does not highlight the hotspot residues with greater contributions, therefore improvements are needed.</p>
+</li>
+</ul>
+<p>We choose to improve this part of the chart to better support the visualization of the paper, facilitating the understanding and citation by subsequent researchers. Our work can play a certain role in lubricating the reading and research of this paper within the field.</p>
+<p> </p>
+<p><a href="https://postimg.cc/w7TF22tr"><img src="https://i.postimg.cc/rF5b8Yqq/2024-12-11-00-11-36.png" alt="2024-12-11-00-11-36.png"></a></p>
+<div style="page-break-after: always;"></div>
+<hr>
+<h1 id="improved-chart-1">Improved Chart 1</h1>
+<p>Based on the above analysis, we have made preliminary changes to the chart:</p>
+<ul>
+<li>
+<p>First, we standardized the chart labels, and in this chart, we represent residues by their position numbers.</p>
+</li>
+<li>
+<p>In the middle section, we list all residues by their numbers. If there are common residues in the upper and lower synthetic subgraphs, then the residue will have both an upward and a downward bar chart.</p>
+</li>
+<li>
+<p>The upward part represents the hot spot residues' binding free energy obtained from the alanine scan, and the downward part represents the energy contribution of the residues, allowing us to more directly observe the energy contribution and the difference in relative binding free energy values of the 9 hot spot residues.</p>
+</li>
+</ul>
+<p>Through the optimized chart, we can draw some new conclusions:</p>
+<ul>
+<li>
+<p>For the 9 hot spot residues, most residues with a larger energy contribution also tend to have a larger relative binding free energy value, generally showing a relationship where the relative binding free energy value is several times the energy contribution.</p>
+</li>
+<li>
+<p>However, it should be noted that this characteristic does not apply to residues Leu1298 and Ser1303. The energy contribution of residue Ser1303 is slightly larger than its relative binding free energy value, while the energy contribution of Leu1298 is more than double its relative binding free energy value.</p>
+</li>
+<li>
+<p>Therefore, special attention should be paid to residues Leu1298 and Ser1303. Based on the above analysis, these two residues may not play a significant role in the stability of protein structure and function. In subsequent research, we can attempt to remove these two residues to see if it affects the protein's structure and function.</p>
+</li>
+</ul>
+<p>The shortcomings of this image are:</p>
+<ul>
+<li>
+<p>Indicating residues by their position numbers, this method, which only uses numbers, makes it difficult for readers to understand the specific meaning of the residues.</p>
+</li>
+<li>
+<p>The x-axis is sorted in ascending order according to the position numbers, which does not help researchers quickly grasp the key points.</p>
+</li>
+<li>
+<p>Both the energy contribution and the hot spot binding free energy are negative values, but using an upward and a downward method to describe them can lead to misunderstandings among readers.</p>
+</li>
+<li>
+<p>The upper half of the chart with hot spot binding free energy is rather sparse, and the data is too dispersed.</p>
+</li>
+</ul>
+<p> </p>
+<p>
+	<a href="https://postimg.cc/MMKssrwf">
+		<img src="https://i.postimg.cc/XJ9TYTDL/2024-12-11-18-26-25.png" alt="2024-12-11-18-26-25.png">
+	</a>
+</p>
+<h2 id=""> </h2>
+<h1 id="improved-chart-2">Improved Chart 2</h1>
+<p>Based on the issues identified in the previous chart, we have made the following changes to the chart:</p>
+<ul>
+<li>
+<p>First, we have re-sorted both the energy contribution values and the relative binding free energy values in ascending order according to their magnitude to more clearly display the order of energy contributions of the residues.</p>
+</li>
+<li>
+<p>Next, we have standardized the x-axis labels (residues) by adopting a three-letter (identifying specific amino acids) - position number format for uniform naming.</p>
+</li>
+<li>
+<p>Then, we have placed the sorted bar charts in an up-down manner. Different from the original chart, we have chosen to place the binding free energy of hot spot residues obtained from the alanine scan, which has relatively smaller data volume, on top. We have adjusted the orientation of the bar charts and represented this data with blue bars to more easily observe the binding free energy relationships of the hot spot residues.</p>
+</li>
+<li>
+<p>Finally, we have placed the 21 main residues of the simulated DAPK1-Glu2B complex in the lower half, and represented the 9 most contributing hot spot residues in blue, while the remaining residues are indicated in orange.</p>
+</li>
+</ul>
+<p>From the optimized chart, we can draw some new conclusions:
+For the upper half of the chart:</p>
+<ul>
+<li>
+<p>The lower half of the graph describes the 21 major residues of the simulated DAPK1-GluN2B complex. The estimated values of the energy contributions of each residue are calculated using a per-residue binding energy decomposition method. Each residue's calculated absolute binding free energy value (the absolute value) exceeds 0.60 kcal/mol.</p>
+</li>
+<li>
+<p>Among the 9 most contributing hot spot residues, Glu100 has the lowest (most negative) binding free energy, playing the greatest role in enhancing the stability of the DAPK1-Glu2B complex and having the strongest affinity for the ligand.</p>
+</li>
+<li>
+<p>Arg1300, Arg302, His1302, and Gln1291 have slightly lower binding free energy compared to Glu100, but these residues have relatively low (more negative) binding free energy and strong affinity for the ligand, greatly contributing to the stability of the DAPK1-Glu2B complex. The remaining residues Tyr1304, Lys141, Leu1298, and Ser1303 have relatively smaller binding free energy compared to the previously mentioned residues.</p>
+</li>
+<li>
+<p>Therefore, Glu100, Arg1300, Arg302, His1302, and Gln1291 have significant importance in maintaining the protein structure and function. Residues Tyr1304, Lys141, Leu1298, and Ser1303 play a smaller role in maintaining the protein structure and function compared to other residues. In the research process, we can prioritize retaining the more important residues and further study their specific relationships with the protein structure and function to discover which residues in the DAPK1-Glu2B complex are essential for maintaining the protein's structure and function.</p>
+</li>
+</ul>
+<p>For the lower half of the chart:</p>
+<ul>
+<li>
+<p>Regarding the absolute binding free energy values of the 21 main residues, we can observe that Gln1291 has the largest energy contribution at -6.36 kcal/mol, while Arg1300 contributes -5.92 kcal/mol, and Glu100 is third at -5.85 kcal/mol.</p>
+</li>
+<li>
+<p>There is a small difference in energy contributions between residues in close proximity, but overall, the difference between the maximum and minimum energy contributions of the residues is too large, with Gln1291 contributing the most at -6.36 kcal/mol, while Arg301 contributes only -0.73 kcal/mol.</p>
+</li>
+<li>
+<p>Therefore, we can identify Glu100, Gln1291, and Arg1300 as the most significant contributors. These residues have a higher interaction strength between the two molecules and are more active. We can focus on these residues, but residues Met146, Phe299, Asn1294, and Arg301 have lower contributions, less than 1 kcal/mol, indicating that these residues may not be key parts of the DAPK1-Glu2B complex.</p>
+</li>
+</ul>
+<p>The shortcomings of this chart are:</p>
+<ul>
+<li>
+<p>Due to the large amount of data and high information density for the 21 main residues, it is inconvenient to observe.</p>
+</li>
+<li>
+<p>The chart is divided into two parts, making it difficult to clearly observe the relationship between the energy contributions and relative binding free energy values of the same residue.</p>
+</li>
+</ul>
+<p>
+	<a href="https://postimg.cc/jL8v5FLt">
+		<img src="https://i.postimg.cc/Sx4PZ042/2024-12-10-2318-small-original.gif" alt="2024-12-10-2318-small-original.gif">
+	</a>
+</p>
+<h1>Energy Contribution and Binding Free Energy</h1>  
+            <div>
+                <div>                        
+                    <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};
+                    </script>
+                    <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.27.0.min.js">    
+                    </script>                
+                    <div id="b6540881-58cf-4c13-8afc-8a7dca6d331f" class="plotly-graph-div" style="height:100%; width:100%;">
+                    </div>            
+                    <script type="text/javascript">                                    
+                    window.PLOTLYENV=window.PLOTLYENV || {};                                    
+                    if (document.getElementById("b6540881-58cf-4c13-8afc-8a7dca6d331f")) {                    
+                        Plotly.newPlot(                        
+                            "b6540881-58cf-4c13-8afc-8a7dca6d331f",                        
+                            [{"hovertemplate":"Residue: %{x}\u003cbr\u003eEnergy Contribution: %{y:.2f} kcal\u002fmol\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":["#5297EB","#5297EB","#5297EB","#5297EB","#5297EB","#5297EB","#5297EB","#5297EB","#5297EB","#F38B3D","#F38B3D","#F38B3D","#F38B3D","#F38B3D","#F38B3D","#F38B3D","#F38B3D","#F38B3D","#F38B3D","#F38B3D","#F38B3D"]},
+                            "name":"Energy contribution (kcal\u002fmol)","orientation":"v","text":["-6.36","-5.93","-5.85","-5.72","-5.13","-4.86","-3.62","-2.79","-2.42","-2.02","-1.91","-1.68","-1.64","-1.47","-1.27","-1.24","-0.97","-0.96","-0.87","-0.86","-0.73"],"textposition":"outside","x":["Gln1291","Arg1300","Glu100","His1302","Leu1298","Arg302","Tyr1304","Lys141","Ser1303","Gly20","Val27","Egl143","Asp1305","Asp161","Ser21","Ile160","Ala1290","Met146","Phe299","Asn1294","Arg301"],
+                            "y":[-6.36,-5.93,-5.85,-5.72,-5.13,-4.86,-3.62,-2.79,-2.42,-2.02,-1.91,-1.68,-1.64,-1.47,-1.27,-1.24,-0.97,-0.96,-0.87,-0.86,-0.73],"type":"bar"}],                        
+                            {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Energy contribution (kcal\u002fmol)","x":0.5,"font":{"size":20,"color":"#4C4F4C","family":"Arial"}},"yaxis":{"autorange":"reversed","showticklabels":false,"showgrid":false,"visible":false,"zeroline":true,"zerolinecolor":"black","zerolinewidth":2,"range":[-7,0]},"xaxis":{"tickfont":{"size":9},"showgrid":false,"visible":true},"margin":{"l":20,"r":20,"t":50,"b":20},"plot_bgcolor":"rgba(0,0,0,0)","paper_bgcolor":"rgba(0,0,0,0)","shapes":[{"line":{"color":"black","width":1},"type":"line","x0":0,"x1":1,"xref":"paper","y0":0,"y1":0,"yref":"y"}]},                        {"responsive": true}                    )                };                            </script>        
+                </div>
+            </div>  
+            <div>
+                <div>                        
+                    <script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};
+                    </script>
+                    <script charset="utf-8" src="https://cdn.plot.ly/plotly-2.27.0.min.js">
+                    </script>                
+                    <div id="07dd38e4-0034-414f-bd10-6555358a5b50" class="plotly-graph-div" style="height:100%; width:100%;">
+                    </div>            
+                    <script type="text/javascript">                                    
+                    window.PLOTLYENV=window.PLOTLYENV || {};                                    
+                    if (document.getElementById("07dd38e4-0034-414f-bd10-6555358a5b50")) {                    
+                        Plotly.newPlot(                        
+                            "07dd38e4-0034-414f-bd10-6555358a5b50",                        
+                            [{"hovertemplate":"Residue: %{x}\u003cbr\u003eRelative Binding Free Energy: %{y:.2f} kcal\u002fmol\u003cextra\u003e\u003c\u002fextra\u003e","marker":{"color":"#5297EB"},"name":"Relative binding free energy (kcal\u002fmol)","orientation":"v","text":["-19.25","-12.12","-11.03","-10.93","-10.79","-7.36","-6.59","-2.85","-2.05"],"textposition":"outside","x":["Glu100","Arg1300","Arg302","His1302","Gln1291","Tyr1304","Lys141","Leu1298","Ser1303"],"y":[-19.25,-12.12,-11.03,-10.93,-10.79,-7.36,-6.59,-2.85,-2.05],"type":"bar"}],                        
+                            {"template":{"data":{"histogram2dcontour":[{"type":"histogram2dcontour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"choropleth":[{"type":"choropleth","colorbar":{"outlinewidth":0,"ticks":""}}],"histogram2d":[{"type":"histogram2d","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmap":[{"type":"heatmap","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"heatmapgl":[{"type":"heatmapgl","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"contourcarpet":[{"type":"contourcarpet","colorbar":{"outlinewidth":0,"ticks":""}}],"contour":[{"type":"contour","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"surface":[{"type":"surface","colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]}],"mesh3d":[{"type":"mesh3d","colorbar":{"outlinewidth":0,"ticks":""}}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"parcoords":[{"type":"parcoords","line":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolargl":[{"type":"scatterpolargl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"scattergeo":[{"type":"scattergeo","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterpolar":[{"type":"scatterpolar","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"scattergl":[{"type":"scattergl","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatter3d":[{"type":"scatter3d","line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattermapbox":[{"type":"scattermapbox","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scatterternary":[{"type":"scatterternary","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"scattercarpet":[{"type":"scattercarpet","marker":{"colorbar":{"outlinewidth":0,"ticks":""}}}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"white","linecolor":"white","minorgridcolor":"white","startlinecolor":"#2a3f5f"},"type":"carpet"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}],"barpolar":[{"marker":{"line":{"color":"#E5ECF6","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"pie":[{"automargin":true,"type":"pie"}]},"layout":{"autotypenumbers":"strict","colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"hovermode":"closest","hoverlabel":{"align":"left"},"paper_bgcolor":"white","plot_bgcolor":"#E5ECF6","polar":{"bgcolor":"#E5ECF6","angularaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"radialaxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"ternary":{"bgcolor":"#E5ECF6","aaxis":{"gridcolor":"white","linecolor":"white","ticks":""},"baxis":{"gridcolor":"white","linecolor":"white","ticks":""},"caxis":{"gridcolor":"white","linecolor":"white","ticks":""}},"coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]]},"xaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"yaxis":{"gridcolor":"white","linecolor":"white","ticks":"","title":{"standoff":15},"zerolinecolor":"white","automargin":true,"zerolinewidth":2},"scene":{"xaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"yaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2},"zaxis":{"backgroundcolor":"#E5ECF6","gridcolor":"white","linecolor":"white","showbackground":true,"ticks":"","zerolinecolor":"white","gridwidth":2}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"geo":{"bgcolor":"white","landcolor":"#E5ECF6","subunitcolor":"white","showland":true,"showlakes":true,"lakecolor":"white"},"title":{"x":0.05},"mapbox":{"style":"light"}}},"title":{"text":"Relative binding free energy (kcal\u002fmol)","x":0.5,"font":{"size":20,"color":"#4C4F4C","family":"Arial"}},"yaxis":{"autorange":"reversed","showticklabels":false,"showgrid":false,"visible":false,"zeroline":true,"zerolinecolor":"black","zerolinewidth":2,"range":[-20,0]},"xaxis":{"tickfont":{"size":14},"showgrid":false,"visible":true},"margin":{"l":20,"r":20,"t":50,"b":20},"plot_bgcolor":"rgba(0,0,0,0)","paper_bgcolor":"rgba(0,0,0,0)","shapes":[{"line":{"color":"black","width":1},"type":"line","x0":0,"x1":1,"xref":"paper","y0":0,"y1":0,"yref":"y"}]},                        {"responsive": true}                    )                };                            </script>        </div></div>  
+
+<hr>
+<h1 id="improved-chart-3">Improved Chart 3</h1>
+<p>We have made dynamic modifications to the chart here:</p>
+<ul>
+<li>
+<p>The x-axis is uniformly named in the format of three-letter (identifying specific amino acids) - position number.</p>
+</li>
+<li>
+<p>The 9 most contributing hot spot residues are placed in the upper half, sorted in ascending order by value and represented by blue bars.</p>
+</li>
+<li>
+<p>Here, we place the 21 main residues in the lower half, sorted in ascending order by value, with the 9 hot spot residues represented by blue bars and the rest by orange bars.</p>
+</li>
+<li>
+<p>By hovering the mouse over each bar, we can get a specific description of that bar, including the name of the residue, the name of the described value (such as relative binding free energy, energy contribution), the corresponding unit, and the specific value.</p>
+</li>
+<li>
+<p>By placing our mouse over a residue that has both energy contribution and relative binding free energy values, the color of the bars corresponding to the energy contribution and relative binding free energy of that residue will change.</p>
+</li>
+</ul>
+<p>Here, we have resolved all the issues and drawbacks mentioned above through visualization. This chart has the following characteristics:</p>
+<ul>
+<li>
+<p>The data intervals are appropriate, making it easy to observe.</p>
+</li>
+<li>
+<p>The text labels are unified, named in the format of three-letter (identifying specific amino acids) - position number, which is easy for researchers to read.</p>
+</li>
+<li>
+<p>Related information is linked, allowing for easy comparison of the energy contributions and relative binding free energy values of the 9 main contributing residues.</p>
+</li>
+<li>
+<p>The direction of the sub-charts is unified, causing no misunderstanding to the readers.</p>
+</li>
+<li>
+<p>The original chart highlights the comparison results of computational and scanning results.</p>
+</li>
+<li>
+<p>The labels highlight key information, and by hovering the mouse over the required bar chart, key information can be obtained.</p>
+</li>
+</ul>
+<p>From observing the chart, we draw the following conclusions:</p>
+<ul>
+<li>
+<p>For the absolute binding free energy values of the 21 main residues which is DAPK1-Glu2B compound and simulated by researchers, we can observe that Gln1291 has the largest energy contribution at -6.36 kcal/mol, while Arg1300 contributes -5.92 kcal/mol, and Glu100 is third at -5.85 kcal/mol.</p>
+</li>
+<li>
+<p>There is a small difference in energy contributions between residues in close proximity, but overall, the difference between the maximum and minimum energy contributions of the residues is too large, with Gln1291 contributing the most at -6.36 kcal/mol, while Arg301 contributes only -0.73 kcal/mol.</p>
+</li>
+<li>
+<p>Therefore, we can identify Glu100, Gln1291, and Arg1300 as the most significant contributors. These residues have a higher interaction strength between the two molecules, are more active, and we can focus on these residues. However, residues Met146, Phe299, Asn1294, and Arg301 have lower contributions, less than 1 kcal/mol, indicating that these residues may not be key parts of the DAPK1-Glu2B complex.</p>
+</li>
+<li>
+<p>The 9 most contributing residues have significantly lower (more negative) binding free energy, indicating a stronger affinity for the ligand and a significant role in enhancing the stability of the DAPK1-Glu2B complex. Additionally, by analyzing the alanine scan results, we can determine that Glu100 has the greatest impact on binding free energy and is a more critical residue in the DAPK1-Glu2B complex.</p>
+</li>
+<li>
+<p>For the 9 hot spot residues, most residues with a larger energy contribution also tend to have a larger relative binding free energy value, generally showing a relationship where the relative binding free energy value is several times the energy contribution.</p>
+</li>
+<li>
+<p>However, it should be noted that this characteristic does not apply to residues Leu1298 and Ser1303. The energy contribution of residue Ser1303 is slightly larger than its relative binding free energy value, while the energy contribution of Leu1298 is more than double its relative binding free energy value.</p>
+</li>
+<li>
+<p>Therefore, special attention should be paid to residues Leu1298 and Ser1303. Based on the above analysis, these two residues may not play a significant role in the stability of protein structure and function. In subsequent research, we can attempt to remove these two residues to see if it affects the protein's structure and function.</p>
+</li>
+</ul>
+<hr>
+<h1 id="conclusion">Conclusion</h1>
+<p>In today's society, depression is gradually becoming an increasingly important public health issue. In the pharmacological treatment of depression, recent research has begun to focus on the molecular mechanisms of depression and explore new therapeutic targets. We have noted that researchers from Zhejiang University and Chongqing University published a study in 2018 on the interaction between DAPK1 and GluN2B, titled &quot;Prediction of GluN2B-CT1290-1310/DAPK1 Interaction by Protein–Peptide Docking and Molecular Dynamics Simulation&quot; [1]. This study revealed the mechanism of interaction between GluN2B-CT1290-1310 and DAPK1. Regarding the bar chart depicting the results of the per-residue binding energy decomposition and the binding free energy of the nine hot spot residues obtained from alanine scanning in the simulated complex presented in the paper, we have proposed improvements in the visualization. We found that the chart had issues such as high information density, misaligned labels, inconsistent residue naming, and a lack of uniformity in the direction of the subplots. Therefore, we have improved the chart by reordering it according to the magnitude of values, standardizing the naming format for labels (residues), and dynamicizing the image.</p>
+<p>Furthermore, by observing the improved chart, we have reached the following conclusions: Glu100, Arg1300, Arg302, His1302, and Gln1291 play a significant role in enhancing the stability of the DAPK1-GluN2B complex and may be crucial for maintaining protein function and structure. However, Leu1298 and Ser1303 have energy contributions that are slightly larger than their relative binding free energy values, suggesting that they may not be as significant for maintaining protein function and structure.</p>
+
+</body>
+</html>

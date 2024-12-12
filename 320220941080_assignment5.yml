@@ -1,0 +1,16 @@
+student_id: 320220941080  
+assignment_id: assignment_5  
+answers:
+  - question: 1  
+    answer: Gantt Chart  
+  - question: 2  
+    answer:   Gantt charts use horizontal bar charts to represent the timeline of project tasks. Each task is represented by a horizontal bar, the length of which indicates the duration of the task. As for variables, data typically includes the task name, start time, end time, duration, and progress percentage. 
+  - question: 3  
+    answer: Gantt Chart can show time dependencies between tasks, showing which tasks are executed in parallel and which tasks need to wait until the previous task is completed before starting.
+    Also, Gantt Chart can can display the project progress, showing the overall progress of the project and the status of each task by the length and position of the bars.  
+  - question: 4  
+    answer: Firstly, for large projects, Gantt charts can become crowded and difficult to read when there are many tasks. Secondly, the timing of different tasks may make it difficult to show details in the same diagram. Fianlly, when a project changes, the Gantt chart needs to be updated frequently, which can lead to increased management costs.  
+  - question: 5  
+    answer: For large projects, group related tasks to reduce the complexity of the chart, create multiple simplified Gantt charts. Then, provide interactivity with software tools that allow users to zoom in and view specific tasks instead of showing all the details at once. Next, make a clear update process in place to ensure that the Gantt chart reflects the status of your project in a timely manner. At the same time, an automated update mechanism is created to reduce the burden of manual maintenance. 
+  - question: 6  
+    answer: https://i-blog.csdnimg.cn/blog_migrate/28281cdbef9b2b602f3acbb4879d4870.png  
