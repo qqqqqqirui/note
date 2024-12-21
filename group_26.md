@@ -17,8 +17,13 @@
 ### Date:2024/12/13
 
 ---   
-### PS:Considering the problem of image display or code running failure due to different configuration environments, we uploaded our notebook document online for easy viewing. Here is the link of our collection of notebook, markdown file and html file:    
-https://www.kaggle.com/code/qiruizhang123/project2     
+### PS:Considering the problem of image display or code running failure due to different configuration environments, we uploaded our notebook document online for easy viewing.    
+Here is the link of our collection of notebook, markdown file and html file: https://www.kaggle.com/datasets/qiruizhang123/info250-t26-project2    
+
+Here is the is the link of our collection of code:    
+https://www.kaggle.com/code/qiruizhang123/info250-t26-project2-notebook     
+ 
+
 ---
 # Introduction
 
